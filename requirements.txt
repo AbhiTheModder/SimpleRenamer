@@ -1,4 +1,2 @@
 pyrofork
 tgcrypto
-gunicorn
-flask

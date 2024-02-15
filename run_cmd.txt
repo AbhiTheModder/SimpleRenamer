@@ -1,1 +1,1 @@
-gunicorn app:app --daemon & python3 bot.py
+python3 bot.py

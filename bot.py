@@ -138,6 +138,7 @@ async def setthumb(client: Client, message: Message):
         return
     else:
         try:
+            m = await message.reply("Setting your thumbnail...")
             # Create a directory for the user if it doesn't exist
             user_dir = f"thumbnails/{message.from_user.id}"
             if not os.path.exists(user_dir):
@@ -149,7 +150,7 @@ async def setthumb(client: Client, message: Message):
             os.rename(new_thumb, thumb_path)
             
             # Send a confirmation message
-            await message.reply("Thumbnail set successfully!")
+            await m.edit_text("Thumbnail set successfully!")
         except Exception as e:
             await message.reply(str(e))
 

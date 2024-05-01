@@ -121,6 +121,7 @@ def rename_files(directory, season, series, sep, username):
         elif ch_match:
             number = "CH" + (ch_match.group(1))
         else:
+            number = ""
             print(f"Could not find episode or chapter number in {file}. Skipping.")
             continue
 
@@ -323,7 +324,7 @@ async def mrename(client: Client, message: Message):
                         progress_args=(i, c_time, "`Done, Uploading...`"),
                     )
                 await i.delete()
-                os.remove(file_path)
+        os.remove(file_path)
     except Exception as e:
         print("ERROR:", str(e))
         await message.edit_text(

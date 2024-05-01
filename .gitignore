@@ -162,3 +162,5 @@ cython_debug/
 # Extras
 thumbnails/
 *.session
+.gitpod.yml
+.idx/

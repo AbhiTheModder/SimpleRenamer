@@ -242,7 +242,7 @@ async def filesdl(_, message: Message):
     await message.download(
         file_name=path, progress=progress, progress_args=(i, c_time, "`Downloading...`")
     )
-    await message.delete()
+    await i.delete()
 
 
 @app.on_message(filters.command("mrename"))
